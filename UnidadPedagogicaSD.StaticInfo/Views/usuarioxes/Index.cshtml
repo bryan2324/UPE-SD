@@ -1,0 +1,51 @@
+﻿@model IEnumerable<UnidadPedagogicaSDStaticInfo.DAL.usuariox>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<br /><br /><br />
+
+<h4>Usuario Registrados</h4>
+<hr />  
+<br/>
+<p>
+    @Html.ActionLink("Registrar Usuario", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Nombre")
+        </th>
+        <th>
+            @Html.DisplayName("Contraseña ")
+        </th>
+        <th>
+            @Html.DisplayName("Numero de Cedula")
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pass)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cedula)
+            </td>
+
+            <td>
+
+              
+                @Html.ActionLink("Deshabilitar Usuario", "Edit", new { id = item.idUsuario })
+            </td>
+        </tr>
+    }
+
+</table>

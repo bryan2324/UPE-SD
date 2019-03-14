@@ -1,0 +1,50 @@
+﻿@model UnidadPedagogicaSDStaticInfo.DAL.mensajex
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<br /><br /><br />
+
+<h2>Eliminar Mensaje</h2>
+
+<h3>¿Esta seguro de Eliminar este mensaje?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Comunicado")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cuerpo)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayName("Fecha")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayName("Escrito por")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuariox.nombre)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <br />
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<UnidadPedagogicaSDStaticInfo.DAL.mensajex>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br /><br />
+
+<h4 class="text-primary">Comunicados de la Institución</h4>
+<hr />
+<br />
+<table class="table">
+    <tr>
+        <th class="col-sm-2" style="background-color:lavender;">
+            @Html.DisplayName("Docente")
+        </th>
+
+
+
+        <th class="col-sm-9" style="background-color:darkgray;">
+            @Html.DisplayName("Comunicado")
+        </th>
+
+        <th>
+            @Html.DisplayName("Fecha")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.usuariox.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cuerpo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha)
+            </td>
+
+
+        </tr>
+    }
+
+</table>

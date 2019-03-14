@@ -1,0 +1,27 @@
+﻿@model UnidadPedagogicaSDStaticInfo.DAL.usuariox
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Content/Style.css");
+    @Html.Raw(TempData["msg"])
+}
+<br />
+<br />
+<div class="login-page">
+    <div class="form">
+        <h4>Inicio de Sesión</h4> <br />
+
+
+        @using (Html.BeginForm("IniciarSesion", "Home", FormMethod.Post, new { @class = "login-form" }))
+        {
+            @Html.TextBoxFor(model => model.cedula, new { placeholder = "Cedula", @class = "form-control control" })
+            @Html.PasswordFor(model => model.pass, new { placeholder = "Password", @class = "form-control" })
+            <button type="submit" class="btn btn">Iniciar Sesión</button>
+        }
+
+    </div>
+
+
+
+</div>
+

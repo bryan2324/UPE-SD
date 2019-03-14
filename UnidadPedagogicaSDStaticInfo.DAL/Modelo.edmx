@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="UPSDTCUXModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="mensajex">
+          <Key>
+            <PropertyRef Name="idMensaje" />
+          </Key>
+          <Property Name="idMensaje" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cuerpo" Type="varchar" MaxLength="6000" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="idUsuario" Type="int" />
+        </EntityType>
+        <EntityType Name="usuariox">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="pass" Type="varchar" MaxLength="100" />
+          <Property Name="cedula" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="idRol" Type="int" />
+        </EntityType>
+        <Association Name="FK__mensajex__idUsua__398D8EEE">
+          <End Role="usuariox" Type="Self.usuariox" Multiplicity="0..1" />
+          <End Role="mensajex" Type="Self.mensajex" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuariox">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="mensajex">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="UPSDTCUXModelStoreContainer">
+          <EntitySet Name="mensajex" EntityType="Self.mensajex" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usuariox" EntityType="Self.usuariox" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__mensajex__idUsua__398D8EEE" Association="Self.FK__mensajex__idUsua__398D8EEE">
+            <End Role="usuariox" EntitySet="usuariox" />
+            <End Role="mensajex" EntitySet="mensajex" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="UPSDTCUXModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="mensajex">
+          <Key>
+            <PropertyRef Name="idMensaje" />
+          </Key>
+          <Property Name="idMensaje" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cuerpo" Type="String" MaxLength="6000" FixedLength="false" Unicode="false" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
+          <Property Name="idUsuario" Type="Int32" />
+          <NavigationProperty Name="usuariox" Relationship="Self.FK__mensajex__idUsua__398D8EEE" FromRole="mensajex" ToRole="usuariox" />
+        </EntityType>
+        <EntityType Name="usuariox">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pass" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="cedula" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idRol" Type="Int32" />
+          <NavigationProperty Name="mensajex" Relationship="Self.FK__mensajex__idUsua__398D8EEE" FromRole="usuariox" ToRole="mensajex" />
+        </EntityType>
+        <Association Name="FK__mensajex__idUsua__398D8EEE">
+          <End Role="usuariox" Type="Self.usuariox" Multiplicity="0..1" />
+          <End Role="mensajex" Type="Self.mensajex" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuariox">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="mensajex">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="UPSDTCUXEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="mensajex" EntityType="Self.mensajex" />
+          <EntitySet Name="usuariox" EntityType="Self.usuariox" />
+          <AssociationSet Name="FK__mensajex__idUsua__398D8EEE" Association="Self.FK__mensajex__idUsua__398D8EEE">
+            <End Role="usuariox" EntitySet="usuariox" />
+            <End Role="mensajex" EntitySet="mensajex" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="UPSDTCUXModelStoreContainer" CdmEntityContainer="UPSDTCUXEntities">
+          <EntitySetMapping Name="mensajex">
+            <EntityTypeMapping TypeName="UPSDTCUXModel.mensajex">
+              <MappingFragment StoreEntitySet="mensajex">
+                <ScalarProperty Name="idMensaje" ColumnName="idMensaje" />
+                <ScalarProperty Name="cuerpo" ColumnName="cuerpo" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuariox">
+            <EntityTypeMapping TypeName="UPSDTCUXModel.usuariox">
+              <MappingFragment StoreEntitySet="usuariox">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+                <ScalarProperty Name="cedula" ColumnName="cedula" />
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

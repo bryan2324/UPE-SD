@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Unidad Pedagógica San Diego</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <link href="/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Footer-with-logo.css" rel="stylesheet" />
+    <script src="~/Scripts/main.js"></script>
+    <link href="~/Content/dataTables.material.min.css" rel="stylesheet" />
+ 
+    <link href="~/Content/material.min.css" rel="stylesheet" />
+
+
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+</head>
+<body id="backg">
+
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <span class="navbar-logo">
+
+
+
+
+        </span>
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Unidad Pedagógica San Diego", "inicioAdmin", "mensajesAdmin", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+
+                <ul class="nav navbar-nav">
+                    @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
+
+
+
+
+
+
+
+                    <li>@Html.ActionLink("Usuarios", "Index", "usuarioxes")</li>
+
+                    <li>@Html.ActionLink("Crear Comunicado", "Create", "mensajesAdmin")</li>
+                    <li>@Html.ActionLink("Ver Comunicados", "Index", "mensajesAdmin")</li>
+
+
+                    <li style="margin-left:210px">@Html.ActionLink("Cerrar Sesión", "Index", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container body-content">
+            @RenderBody()
+        </div>
+    </div>
+    <footer id="myFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+
+                    <ul>
+
+                        <img style="padding-top:10%" src="~/Images/logoMini.jpg" />
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Sobre nosotros</h5>
+                    <ul>
+                        <li>@Html.ActionLink("Misión y Visión", "misionVision", "Home")</li>
+                        <li>@Html.ActionLink("Filosofía", "Filosofia", "Home")</li>
+                        <li>@Html.ActionLink("Valores de la Institución", "Valores", "Home")</li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Redes Sociales</h5>
+
+                    <a href="https://www.facebook.com/Unidad-Pedag%C3%B3gica-San-Diego-Primaria-Secundaria-1549017475363205/" class="facebook"><i class="fa fa-facebook"></i></a>
+
+
+                </div>
+                <div class="col-sm-3 info">
+                    <h5>Contacto</h5>
+                    <p>Telefono<br /> 2279-5011 <br /><br />E-Mail<br />upe.sandiego@mep.go.cr </p>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

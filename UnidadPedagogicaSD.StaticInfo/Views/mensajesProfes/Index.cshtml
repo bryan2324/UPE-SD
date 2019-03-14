@@ -1,0 +1,60 @@
+﻿@model IEnumerable<UnidadPedagogicaSDStaticInfo.DAL.mensajex>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutProfe.cshtml";
+}
+
+<br /><br />
+
+<h3 class="text-primary">Comunicados de la Institución</h3>
+<hr />
+<br />
+
+<p>
+    @Html.ActionLink("Crear Comunicado", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th class="col-sm-2" style="background-color:lavender;">
+            @Html.DisplayName("Docente")
+        </th>
+
+
+
+        <th class="col-sm-9" style="background-color:darkgray;">
+            @Html.DisplayName("Comunicado")
+        </th>
+
+        <th>
+            @Html.DisplayName("Fecha")
+        </th>
+        <th>
+            @Html.DisplayName("Acciones")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.usuariox.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cuerpo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha)
+            </td>
+
+
+            <td>
+                @*@Html.ActionLink("Editar", "Edit", new { id = item.idMensaje }) |*@
+                @*@Html.ActionLink("Detalles", "Details", new { id = item.idMensaje }) |*@
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.idMensaje })
+            </td>
+        </tr>
+    }
+
+</table>
