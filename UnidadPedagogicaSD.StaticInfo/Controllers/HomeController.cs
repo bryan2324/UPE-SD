@@ -72,11 +72,13 @@ namespace UnidadPedagogicaSD.StaticInfo.Controllers
                     if (rs == 1)
                     {
                         System.Web.HttpContext.Current.Session["idRol"] = "1";
+                        System.Web.HttpContext.Current.Session["Cedula"] = cedula;
                         pagina = "../mensajesProfes/inicioProfesor";
 
                     }
                     else if (rs == 2)
                     {
+                        System.Web.HttpContext.Current.Session["Cedula"] = cedula;
                         System.Web.HttpContext.Current.Session["idRol"] = "2";
                         pagina = "../mensajesAdmin/InicioAdmin";
                     }

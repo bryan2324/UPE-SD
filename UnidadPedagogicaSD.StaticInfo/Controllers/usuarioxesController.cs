@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using UnidadPedagogicaSDStaticInfo.DAL;
@@ -58,7 +59,18 @@ namespace UnidadPedagogicaSD.StaticInfo.Controllers
         // GET: usuarioxes/Create
         public ActionResult Create()
         {
-            return View();
+            string r = System.Web.HttpContext.Current.Session["idRol"] as String;
+            if (r == "2")
+            {
+
+                return View();
+
+            }
+            else 
+            {
+                return View("../Home/Index");
+            }
+           
         }
 
         // POST: usuarioxes/Create
@@ -68,24 +80,65 @@ namespace UnidadPedagogicaSD.StaticInfo.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "idUsuario,nombre,pass,cedula,idRol")] usuariox usuariox)
         {
-            if (ModelState.IsValid)
+            var Registro = new Models.LoginModel();
+            
+            string pass = usuariox.pass;
+            string cedula = usuariox.cedula;
+            bool ok = false;
+            bool ok2 = false;
+            bool ok3= Registro.registro(usuariox.cedula);
+            Regex Val = new Regex(@"[0-9]{1,9}(\.[0-9]{0,2})?$");
+            Val.IsMatch(cedula);
+            if (Val.IsMatch(cedula) == true && cedula.Length == 9) {
+                ok = true;
+            }
+
+            if (pass.Length >= 4) {
+                ok2 = true;
+            }
+
+
+            if (ModelState.IsValid && ok == true && ok2 == true && ok3 == true)
             {
                 db.usuariox.Add(usuariox);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            string r = System.Web.HttpContext.Current.Session["idRol"] as String;
-            if (r == "2")
+            else if (ModelState.IsValid && ok == false && ok2 == true)
             {
-                return View(usuariox);
+                TempData["msg"] = "<script>alert('Cedula debe Contener 9 Numeros');</script>";
 
+                return View();
             }
+            else if (ModelState.IsValid && ok == true && ok2 == false)
+            {
+                TempData["msg"] = "<script>alert('Clave debe contener 4 carateres o mas');</script>";
+                return View();
+            }
+            else if (ModelState.IsValid && ok == true && ok2 == false && ok3 == false)
+            {
+
+                TempData["msg"] = "<script>alert('Clave debe contener 4 carateres o mas');</script>";
+                return View();
+            }
+            else if (ModelState.IsValid && ok == true && ok2 == true && ok3 == false)
+            {
+                TempData["msg"] = "<script>alert('Ese numero de cedula ya existe en el sistema');</script>";
+                return View();
+           }
             else
             {
-                return View("../Home/Index");
+                TempData["msg"] = "<script>alert('Cedula debe Contener 9 Numeros');</script>";
+                TempData["msg"] = "<script>alert('Clave debe contener 4 carateres o mas');</script>";
+
+                return View();
             }
-        }
+            
+            
+
+
+            }
+        
 
         // GET: usuarioxes/Edit/5
         public ActionResult Edit(int? id)

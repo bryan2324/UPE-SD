@@ -3,6 +3,9 @@
 @{
     ViewBag.Title = "Usuarios";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+
+
+    
 }
 <br /><br /><br />
 
@@ -17,35 +20,59 @@
         <th>
             @Html.DisplayName("Nombre")
         </th>
-        <th>
-            @Html.DisplayName("Contraseña ")
-        </th>
+
         <th>
             @Html.DisplayName("Numero de Cedula")
         </th>
-
-        <th></th>
+        <th>
+            @Html.DisplayName("Contraseña")
+        </th>
+        <th>
+            @Html.DisplayName("Rol en el sistema")
+        </th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.pass)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.cedula)
-            </td>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cedula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pass)
+        </td>
+        @{
+            if (item.idRol == 1)
+            {
+                <td>
+                    Profesor
+                </td>
+            }
+            else if (item.idRol == 2)
+            {
+                <td>
+                    Administrador
+                </td>
+            }
+            else
+            {
+                <td>
+                    Usuario Deshabilitado
+                </td>
+            }
 
-            <td>
+        }
 
-              
-                @Html.ActionLink("Deshabilitar Usuario", "Edit", new { id = item.idUsuario })
-            </td>
-        </tr>
+
+        <td>
+
+
+            @Html.ActionLink("Deshabilitar Usuario", "Edit", new { id = item.idUsuario })
+        </td>
+    </tr>
     }
 
 </table>

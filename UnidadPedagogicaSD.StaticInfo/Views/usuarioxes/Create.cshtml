@@ -3,10 +3,11 @@
 @{
     ViewBag.Title = "Crear Usuario";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    @Html.Raw(TempData["msg"])
 }
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     <br /><br />
@@ -42,12 +43,12 @@
             @Html.Label("Rol del Nuevo Usuario", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @*@Html.EditorFor(model => model.idRol, new { htmlAttributes = new { @class = "form-control" } })
-        @Html.ValidationMessageFor(model => model.idRol, "", new { @class = "text-danger" })*@
-                <select id="idRol" name="idRol" class = "form-control" >
-                    
+                    @Html.ValidationMessageFor(model => model.idRol, "", new { @class = "text-danger" })*@
+                <select id="idRol" name="idRol" class="form-control">
+
                     <option value="1">Profesor</option>
                     <option value="2">Administrador</option>
-                   
+
                 </select>
                 @Html.ValidationMessageFor(model => model.idRol, "", new { @class = "text-danger" })
 

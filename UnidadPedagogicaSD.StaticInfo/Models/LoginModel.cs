@@ -67,5 +67,74 @@ namespace UnidadPedagogicaSD.StaticInfo.Models
             }
             return rol;
         }
+
+
+
+        public bool registro(string cedula) {
+
+            List<usuariox> allUser = new List<usuariox>();
+            allUser = UnidadPedagogicaSDStaticInfo.BS.ManUsuarios._Instancia.Mostrar();
+
+            int largo = Convert.ToInt32(allUser.Count.ToString());
+            bool r = false;
+            try
+            {
+
+                for (int i = 0; i < largo; i++)
+                {
+                    String user = allUser[i].cedula.ToString();
+                   
+
+
+                    if (cedula.Equals(user) )
+                    {
+
+                        
+                        r = true;
+                    }
+
+                }
+            }
+            catch (Exception e)
+            {
+            }
+
+            return r;
+        }
+
+
+        public int obtenerIdUsuario(string cedula)
+        {
+
+            List<usuariox> allUser = new List<usuariox>();
+            allUser = UnidadPedagogicaSDStaticInfo.BS.ManUsuarios._Instancia.Mostrar();
+
+            int largo = Convert.ToInt32(allUser.Count.ToString());
+            bool r = false;
+            try
+            {
+
+                for (int i = 0; i < largo; i++)
+                {
+                    String user = allUser[i].cedula.ToString();
+
+
+
+                    if (cedula.Equals(user))
+                    {
+
+                        return Convert.ToInt32(allUser[i].idUsuario.ToString());
+
+                    }
+
+                }
+            }
+            catch (Exception e)
+            {
+            }
+
+            return -1;
+        }
+
     }
 }

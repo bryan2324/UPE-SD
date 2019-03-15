@@ -116,6 +116,10 @@ namespace UnidadPedagogicaSD.StaticInfo.Controllers
             TimeZoneInfo serverZone = TimeZoneInfo.FindSystemTimeZoneById("Central America Standard Time");
             DateTime currentDateTime = TimeZoneInfo.ConvertTimeFromUtc(utcTime, serverZone);
 
+            var backId = new Models.LoginModel();
+            string ced = System.Web.HttpContext.Current.Session["Cedula"] as String;
+            mensajex.idUsuario = backId.obtenerIdUsuario(ced);
+
             mensajex.fecha = currentDateTime;
 
             if (ModelState.IsValid)
