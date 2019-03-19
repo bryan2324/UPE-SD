@@ -1,0 +1,32 @@
+﻿@model UnidadPedagogicaSD.StaticInfo.Models.RegistroModel
+@{
+    ViewBag.Title = "TokenVerify";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Html.Raw(TempData["msg"])
+}
+
+<br /><br />
+<br />
+<h5>Ingrese el token de registro</h5>
+
+<hr />
+<div class="login-page">
+    <div class="form">
+        <h4>Verificación de Token</h4>
+
+
+        @using (Html.BeginForm("TokenVerify", "Home", FormMethod.Post, new { @class = "login-form" }))
+        {
+            @Html.PasswordFor(model => model.token, new { placeholder = "Secret Token", @class = "form-control" })
+            <br />
+            <button type="submit" class="btn btn">Continuar Registro</button>
+            <br />
+
+
+
+        }
+
+    </div>
+
+
+</div>

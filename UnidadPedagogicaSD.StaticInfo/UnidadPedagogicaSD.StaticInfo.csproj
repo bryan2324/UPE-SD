@@ -138,11 +138,13 @@
     <Compile Include="Controllers\mensajesAdminController.cs" />
     <Compile Include="Controllers\mensajesController.cs" />
     <Compile Include="Controllers\mensajesProfesController.cs" />
+    <Compile Include="Controllers\tokensController.cs" />
     <Compile Include="Controllers\usuarioxesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\RegistroModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\HomeAdminController.cs" />
   </ItemGroup>
@@ -227,6 +229,10 @@
     <Content Include="Views\usuarioxes\Edit.cshtml" />
     <Content Include="Views\mensajesAdmin\InicioAdmin.cshtml" />
     <Content Include="Views\mensajesProfes\inicioProfesor.cshtml" />
+    <Content Include="Views\tokens\Edit.cshtml" />
+    <Content Include="Views\tokens\Index.cshtml" />
+    <Content Include="Views\usuarioxes\CreatebyToken.cshtml" />
+    <Content Include="Views\Home\TokenVerify.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="UPSDTCUXModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="UPSDTCUXModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="mensajex">
           <Key>
             <PropertyRef Name="idMensaje" />
@@ -13,6 +13,13 @@
           <Property Name="cuerpo" Type="varchar" MaxLength="6000" />
           <Property Name="fecha" Type="datetime" />
           <Property Name="idUsuario" Type="int" />
+        </EntityType>
+        <EntityType Name="tokens">
+          <Key>
+            <PropertyRef Name="idToken" />
+          </Key>
+          <Property Name="idToken" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="token" Type="int" />
         </EntityType>
         <EntityType Name="usuariox">
           <Key>
@@ -38,14 +45,14 @@
         </Association>
         <EntityContainer Name="UPSDTCUXModelStoreContainer">
           <EntitySet Name="mensajex" EntityType="Self.mensajex" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tokens" EntityType="Self.tokens" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="usuariox" EntityType="Self.usuariox" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__mensajex__idUsua__398D8EEE" Association="Self.FK__mensajex__idUsua__398D8EEE">
             <End Role="usuariox" EntitySet="usuariox" />
             <End Role="mensajex" EntitySet="mensajex" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="UPSDTCUXModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -89,7 +96,15 @@
             <End Role="usuariox" EntitySet="usuariox" />
             <End Role="mensajex" EntitySet="mensajex" />
           </AssociationSet>
+          <EntitySet Name="tokens" EntityType="UPSDTCUXModel.tokens" />
         </EntityContainer>
+        <EntityType Name="tokens">
+          <Key>
+            <PropertyRef Name="idToken" />
+          </Key>
+          <Property Name="idToken" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="token" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -114,6 +129,14 @@
                 <ScalarProperty Name="pass" ColumnName="pass" />
                 <ScalarProperty Name="cedula" ColumnName="cedula" />
                 <ScalarProperty Name="idRol" ColumnName="idRol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tokens">
+            <EntityTypeMapping TypeName="UPSDTCUXModel.tokens">
+              <MappingFragment StoreEntitySet="tokens">
+                <ScalarProperty Name="token" ColumnName="token" />
+                <ScalarProperty Name="idToken" ColumnName="idToken" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

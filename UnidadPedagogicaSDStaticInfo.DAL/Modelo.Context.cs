@@ -27,5 +27,6 @@ namespace UnidadPedagogicaSDStaticInfo.DAL
     
         public virtual DbSet<mensajex> mensajex { get; set; }
         public virtual DbSet<usuariox> usuariox { get; set; }
+        public virtual DbSet<tokens> tokens { get; set; }
     }
 }

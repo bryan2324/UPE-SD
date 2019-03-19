@@ -1,0 +1,33 @@
+﻿@model IEnumerable<UnidadPedagogicaSDStaticInfo.DAL.tokens>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<br /><br /><br />
+<h4>Token</h4>
+<br /><br />
+<div class="col-md-12 pull-right">
+    <table class="table" style="max-width:50%;font-size:170%;margin:0px auto">
+        <tr>
+            <th class="col-sm-5" style="background-color:lightgray;text-align:center">
+                @Html.DisplayName("Token Actual")
+            </th>
+            <th class="col-sm-12"></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="text-align:center">
+                    @Html.DisplayFor(modelItem => item.token)
+                </td>
+                <td style="text-align:center">
+                    @Html.ActionLink("Cambiar token de registro", "Edit", new { id = item.idToken }) 
+
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

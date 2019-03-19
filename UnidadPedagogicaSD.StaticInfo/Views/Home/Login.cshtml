@@ -17,11 +17,15 @@
             @Html.TextBoxFor(model => model.cedula, new { placeholder = "Cedula", @class = "form-control control" })
             @Html.PasswordFor(model => model.pass, new { placeholder = "Password", @class = "form-control" })
             <button type="submit" class="btn btn">Iniciar Sesión</button>
+            <br />
+            <br />
+
+
         }
 
+        @Html.ActionLink("Registrarse Ahora", "TokenVerify", "Home")
     </div>
 
-
-
+    
 </div>
 

@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="UPSDTCUXModel.mensajex" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="UPSDTCUXModel.usuariox" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="UPSDTCUXModel.FK__mensajex__idUsua__398D8EEE" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="UPSDTCUXModel.tokens" Width="1.5" PointX="5.25" PointY="1.25" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

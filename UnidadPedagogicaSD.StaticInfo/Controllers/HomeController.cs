@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using UnidadPedagogicaSD.StaticInfo.Models;
 
 namespace UnidadPedagogicaSD.StaticInfo.Controllers
 {
@@ -112,5 +113,27 @@ namespace UnidadPedagogicaSD.StaticInfo.Controllers
             return View();
         }
 
+        public ActionResult TokenVerify() {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult TokenVerify(RegistroModel registroPersona)
+        {
+            var reg = new RegistroModel();
+         
+            if (reg.verificar(registroPersona.token))
+            {
+                System.Web.HttpContext.Current.Session["tokenVerify"] = "1";
+                return RedirectToAction("../usuarioxes/CreatebyToken");
+            }
+            else {
+                TempData["msg"] = "<script>alert('Token Incorrecto');</script>";
+                return View();
+            };
+
+
+
+        }
     }
 }
