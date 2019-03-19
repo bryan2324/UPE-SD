@@ -26,7 +26,7 @@ namespace UnidadPedagogicaSD.StaticInfo.Controllers
             }
             else
             {
-                return View("../Home/Index");
+                return RedirectToAction("../Home/Index");
             }
         }
 
@@ -43,7 +43,7 @@ namespace UnidadPedagogicaSD.StaticInfo.Controllers
             }
             else
             {
-                return View("../Home/Index");
+                return RedirectToAction("../Home/Index");
             }
         }
 
@@ -68,7 +68,7 @@ namespace UnidadPedagogicaSD.StaticInfo.Controllers
             }
             else
             {
-                return View("../Home/Index");
+                return RedirectToAction("../Home/Index");
             }
         }
 
@@ -84,7 +84,7 @@ namespace UnidadPedagogicaSD.StaticInfo.Controllers
             }
             else
             {
-                return View("../Home/Index");
+                return RedirectToAction("../Home/Index");
             }
         }
 
@@ -120,7 +120,7 @@ namespace UnidadPedagogicaSD.StaticInfo.Controllers
             }
             else
             {
-                return View("../Home/Index");
+                return RedirectToAction("../Home/Index");
             }
         }
 
@@ -145,7 +145,7 @@ namespace UnidadPedagogicaSD.StaticInfo.Controllers
             }
             else
             {
-                return View("../Home/Index");
+                return RedirectToAction("../Home/Index");
             }
         }
 
@@ -177,7 +177,7 @@ namespace UnidadPedagogicaSD.StaticInfo.Controllers
             }
             else
             {
-                return View("../Home/Index");
+                return RedirectToAction("../Home/Index");
             }
         }
 
@@ -201,7 +201,7 @@ namespace UnidadPedagogicaSD.StaticInfo.Controllers
             }
             else
             {
-                return View("../Home/Index");
+                return RedirectToAction("../Home/Index");
             }
         }
 
