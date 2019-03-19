@@ -9,7 +9,7 @@
 <h4 class="text-primary">Comunicados de la Institución</h4>
 <hr />
 <br />
-<table class="table">
+<table class="table" id="example">
     <tr>
         <th class="col-sm-2" style="background-color:lavender;">
             @Html.DisplayName("Docente")
@@ -45,3 +45,8 @@
     }
 
 </table>
+
+<script>
+        $('#example').hide(0).delay(100).fadeIn(350);
+
+</script>
