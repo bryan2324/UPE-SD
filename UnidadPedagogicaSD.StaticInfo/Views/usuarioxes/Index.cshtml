@@ -15,22 +15,22 @@
 <p>
     @Html.ActionLink("Registrar Usuario", "Create")
 </p>
-<table class="table">
+<table class="table" style="margin:0;padding:0;table-layout:fixed;width:100%">
     <tr>
-        <th>
+        <th style="overflow-wrap:break-word">
             @Html.DisplayName("Nombre")
         </th>
 
-        <th>
+        <th style="overflow-wrap:break-word">
             @Html.DisplayName("Numero de Cedula")
         </th>
-        <th>
+        <th style="overflow-wrap:break-word">
             @Html.DisplayName("Contraseña")
         </th>
-        <th>
+        <th style="overflow-wrap:break-word">
             @Html.DisplayName("Rol en el sistema")
         </th>
-        <th>
+        <th style="overflow-wrap:break-word">
             @Html.DisplayName("Acciones")
         </th>
     </tr>
@@ -40,31 +40,31 @@
   
 
     <tr>
-        <td>
+        <td style="overflow-wrap:break-word">
             @Html.DisplayFor(modelItem => item.nombre)
         </td>
-        <td>
+        <td style="overflow-wrap:break-word">
             @Html.DisplayFor(modelItem => item.cedula)
         </td>
-        <td>
+        <td style="overflow-wrap:break-word">
             @Html.DisplayFor(modelItem => item.pass)
         </td>
         @{
             if (item.idRol == 1)
             {
-                <td>
+                <td style="overflow-wrap:break-word">
                     Profesor
                 </td>
             }
             else if (item.idRol == 2)
             {
-                <td>
+                <td style="overflow-wrap:break-word">
                     Administrador
                 </td>
             }
             else
             {
-                <td>
+                <td style="overflow-wrap:break-word">
                     Usuario Deshabilitado
                 </td>
             }
@@ -72,7 +72,7 @@
         }
 
 
-        <td>
+        <td style="overflow-wrap:break-word">
 
 
             @Html.ActionLink("Cambiar rol del Usuario", "Edit", new { id = item.idUsuario })
