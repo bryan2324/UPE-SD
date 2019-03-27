@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Bryan\source\repos\UnidadPedagogicaSD.StaticInfo\UnidadPedagogicaSDStaticInfo.DAL\Modelo.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Bryan\Desktop\TCU FINAL\UnidadPedagogicaSD.StaticInfo\UnidadPedagogicaSDStaticInfo.DAL\Modelo.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

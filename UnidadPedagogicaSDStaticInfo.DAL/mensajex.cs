@@ -18,6 +18,7 @@ namespace UnidadPedagogicaSDStaticInfo.DAL
         public string cuerpo { get; set; }
         public Nullable<System.DateTime> fecha { get; set; }
         public Nullable<int> idUsuario { get; set; }
+        public Nullable<int> visible { get; set; }
     
         public virtual usuariox usuariox { get; set; }
     }

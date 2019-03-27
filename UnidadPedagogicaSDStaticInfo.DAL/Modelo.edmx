@@ -13,6 +13,7 @@
           <Property Name="cuerpo" Type="varchar" MaxLength="6000" />
           <Property Name="fecha" Type="datetime" />
           <Property Name="idUsuario" Type="int" />
+          <Property Name="visible" Type="int" />
         </EntityType>
         <EntityType Name="tokens">
           <Key>
@@ -65,6 +66,7 @@
           <Property Name="fecha" Type="DateTime" Precision="3" />
           <Property Name="idUsuario" Type="Int32" />
           <NavigationProperty Name="usuariox" Relationship="Self.FK__mensajex__idUsua__398D8EEE" FromRole="mensajex" ToRole="usuariox" />
+          <Property Name="visible" Type="Int32" />
         </EntityType>
         <EntityType Name="usuariox">
           <Key>
@@ -114,6 +116,7 @@
           <EntitySetMapping Name="mensajex">
             <EntityTypeMapping TypeName="UPSDTCUXModel.mensajex">
               <MappingFragment StoreEntitySet="mensajex">
+                <ScalarProperty Name="visible" ColumnName="visible" />
                 <ScalarProperty Name="idMensaje" ColumnName="idMensaje" />
                 <ScalarProperty Name="cuerpo" ColumnName="cuerpo" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />

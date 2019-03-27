@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UPSDTCUXModelStoreContainer" CdmEntityContainer="UPSDTCUXEntities">
+    <EntitySetMapping Name="mensajex">
+      <EntityTypeMapping TypeName="UPSDTCUXModel.mensajex">
+        <MappingFragment StoreEntitySet="mensajex">
+          <ScalarProperty Name="visible" ColumnName="visible" />
+          <ScalarProperty Name="idMensaje" ColumnName="idMensaje" />
+          <ScalarProperty Name="cuerpo" ColumnName="cuerpo" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuariox">
+      <EntityTypeMapping TypeName="UPSDTCUXModel.usuariox">
+        <MappingFragment StoreEntitySet="usuariox">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tokens">
+      <EntityTypeMapping TypeName="UPSDTCUXModel.tokens">
+        <MappingFragment StoreEntitySet="tokens">
+          <ScalarProperty Name="token" ColumnName="token" />
+          <ScalarProperty Name="idToken" ColumnName="idToken" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
