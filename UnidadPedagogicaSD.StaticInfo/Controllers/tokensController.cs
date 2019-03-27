@@ -17,7 +17,18 @@ namespace UnidadPedagogicaSD.StaticInfo.Controllers
         // GET: tokens
         public ActionResult Index()
         {
-            return View(db.tokens.ToList());
+            string r = System.Web.HttpContext.Current.Session["idRol"] as String;
+            if (r == "2")
+            {
+                return View(db.tokens.ToList());
+
+            }
+            else
+            {
+                return View("../Home/Index");
+            }
+
+            
         }
 
         // GET: tokens/Details/5
@@ -44,23 +55,12 @@ namespace UnidadPedagogicaSD.StaticInfo.Controllers
         // POST: tokens/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idToken,token")] tokens tokens)
-        {
-            if (ModelState.IsValid)
-            {
-                db.tokens.Add(tokens);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(tokens);
-        }
+        
 
         // GET: tokens/Edit/5
         public ActionResult Edit(int? id)
         {
+            string r = System.Web.HttpContext.Current.Session["idRol"] as String;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -70,7 +70,17 @@ namespace UnidadPedagogicaSD.StaticInfo.Controllers
             {
                 return HttpNotFound();
             }
-            return View(tokens);
+            
+            if (r == "2")
+            {
+                return View(tokens);
+
+            }
+            else
+            {
+                return View("../Home/Index");
+            }
+
         }
 
         // POST: tokens/Edit/5

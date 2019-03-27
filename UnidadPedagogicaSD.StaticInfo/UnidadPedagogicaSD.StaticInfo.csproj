@@ -138,7 +138,6 @@
     <Compile Include="Controllers\mensajesAdminController.cs" />
     <Compile Include="Controllers\mensajesController.cs" />
     <Compile Include="Controllers\mensajesProfesController.cs" />
-    <Compile Include="Controllers\mensajexesController.cs" />
     <Compile Include="Controllers\tokensController.cs" />
     <Compile Include="Controllers\usuarioxesController.cs" />
     <Compile Include="Global.asax.cs">

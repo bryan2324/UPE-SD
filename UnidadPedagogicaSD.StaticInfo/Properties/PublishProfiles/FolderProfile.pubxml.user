@@ -196,10 +196,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/01/2018 12:20:56</publishTime>
     </File>
     <File Include="bin/UnidadPedagogicaSD.StaticInfo.dll">
-      <publishTime>03/27/2019 10:33:19</publishTime>
+      <publishTime>03/27/2019 11:18:39</publishTime>
     </File>
     <File Include="bin/UnidadPedagogicaSD.StaticInfo.pdb">
-      <publishTime>03/27/2019 10:33:19</publishTime>
+      <publishTime>03/27/2019 11:18:39</publishTime>
     </File>
     <File Include="bin/UnidadPedagogicaSDStaticInfo.BS.dll">
       <publishTime>03/25/2019 13:39:04</publishTime>
