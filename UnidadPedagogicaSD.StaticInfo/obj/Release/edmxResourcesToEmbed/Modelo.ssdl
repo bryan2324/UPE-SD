@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UPSDTCUXModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="mensajex">
+    <Key>
+      <PropertyRef Name="idMensaje" />
+    </Key>
+    <Property Name="idMensaje" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cuerpo" Type="varchar" MaxLength="6000" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="idUsuario" Type="int" />
+  </EntityType>
+  <EntityType Name="usuariox">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="pass" Type="varchar" MaxLength="100" />
+    <Property Name="cedula" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__mensajex__idUsua__398D8EEE">
+    <End Role="usuariox" Type="Self.usuariox" Multiplicity="0..1" />
+    <End Role="mensajex" Type="Self.mensajex" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuariox">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="mensajex">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="UPSDTCUXModelStoreContainer">
+    <EntitySet Name="mensajex" EntityType="Self.mensajex" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usuariox" EntityType="Self.usuariox" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__mensajex__idUsua__398D8EEE" Association="Self.FK__mensajex__idUsua__398D8EEE">
+      <End Role="usuariox" EntitySet="usuariox" />
+      <End Role="mensajex" EntitySet="mensajex" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

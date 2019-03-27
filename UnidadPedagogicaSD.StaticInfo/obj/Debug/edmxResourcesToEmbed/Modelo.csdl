@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UPSDTCUXModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="mensajex">
+    <Key>
+      <PropertyRef Name="idMensaje" />
+    </Key>
+    <Property Name="idMensaje" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cuerpo" Type="String" MaxLength="6000" FixedLength="false" Unicode="false" />
+    <Property Name="fecha" Type="DateTime" Precision="3" />
+    <Property Name="idUsuario" Type="Int32" />
+    <NavigationProperty Name="usuariox" Relationship="Self.FK__mensajex__idUsua__398D8EEE" FromRole="mensajex" ToRole="usuariox" />
+  </EntityType>
+  <EntityType Name="usuariox">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pass" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="cedula" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idRol" Type="Int32" />
+    <NavigationProperty Name="mensajex" Relationship="Self.FK__mensajex__idUsua__398D8EEE" FromRole="usuariox" ToRole="mensajex" />
+  </EntityType>
+  <Association Name="FK__mensajex__idUsua__398D8EEE">
+    <End Role="usuariox" Type="Self.usuariox" Multiplicity="0..1" />
+    <End Role="mensajex" Type="Self.mensajex" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuariox">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="mensajex">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="UPSDTCUXEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="mensajex" EntityType="Self.mensajex" />
+    <EntitySet Name="usuariox" EntityType="Self.usuariox" />
+    <AssociationSet Name="FK__mensajex__idUsua__398D8EEE" Association="Self.FK__mensajex__idUsua__398D8EEE">
+      <End Role="usuariox" EntitySet="usuariox" />
+      <End Role="mensajex" EntitySet="mensajex" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

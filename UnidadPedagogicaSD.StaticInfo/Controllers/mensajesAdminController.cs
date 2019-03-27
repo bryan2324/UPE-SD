@@ -112,6 +112,7 @@ namespace UnidadPedagogicaSD.StaticInfo.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "idMensaje,cuerpo,fecha,idUsuario")] mensajex mensajex)
         {
+            mensajex.visible = 0;
             DateTime utcTime = DateTime.UtcNow;
             TimeZoneInfo serverZone = TimeZoneInfo.FindSystemTimeZoneById("Central America Standard Time");
             DateTime currentDateTime = TimeZoneInfo.ConvertTimeFromUtc(utcTime, serverZone);
@@ -179,13 +180,12 @@ namespace UnidadPedagogicaSD.StaticInfo.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idMensaje,cuerpo,fecha,idUsuario")] mensajex mensajex)
+        public ActionResult Edit([Bind(Include = "idMensaje,cuerpo,fecha,idUsuario,visible")] mensajex mensajex)
         {
+
             DateTime utcTime = DateTime.UtcNow;
             TimeZoneInfo serverZone = TimeZoneInfo.FindSystemTimeZoneById("Central America Standard Time");
             DateTime currentDateTime = TimeZoneInfo.ConvertTimeFromUtc(utcTime, serverZone);
-
-            mensajex.fecha = currentDateTime;
             if (ModelState.IsValid)
             {
                 db.Entry(mensajex).State = EntityState.Modified;
@@ -219,7 +219,16 @@ namespace UnidadPedagogicaSD.StaticInfo.Controllers
             {
                 return HttpNotFound();
             }
-            return View(mensajex);
+            string r = System.Web.HttpContext.Current.Session["idRol"] as String;
+            if (r == "2")
+            {
+                return View(mensajex);
+
+            }
+            else
+            {
+                return RedirectToAction("../Home/Index");
+            }
         }
 
         // POST: mensajesAdmin/Delete/5

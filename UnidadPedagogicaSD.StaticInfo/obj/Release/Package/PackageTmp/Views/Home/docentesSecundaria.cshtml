@@ -1,0 +1,237 @@
+﻿
+@{
+    ViewBag.Title = "Secundaria";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    @Styles.Render("~/Content/dataTables.material.min.css");
+    @Styles.Render("~/Content/material.min.css");
+
+
+}
+<link href="~/Content/dataTables.material.min.css" rel="stylesheet" />
+<link href="~/Content/material.min.css" rel="stylesheet" />
+<script src="~/Scripts/DataTable/jquery-3.3.1.js"></script>
+<script src="~/Scripts/DataTable/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/DataTable/dataTables.material.min.js"></script>
+
+<br /><br /><br />
+<h5><strong>Docentes Secundaria</strong></h5>
+<hr />
+<table id="example" class="mdl-data-table" style="width:100%;background-color:#FCFBFE">
+    <thead>
+        <tr>
+            <th>Docente</th>
+            <th>Asignatura</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Alexander Torres Corrales</td>
+            <td>Español</td>
+
+        </tr>
+
+        <tr>
+            <td>Faustino Figueroa Villanueva</td>
+            <td>Español</td>
+
+        </tr>
+        <tr>
+            <td>Xiomara Moya Solano</td>
+            <td>Español</td>
+
+        </tr>
+        <tr>
+            <td>Iván Barquero Solano</td>
+            <td>Estudios Sociales</td>
+        </tr>
+
+        <tr>
+            <td>Gerardo Castillo Porras</td>
+            <td>Estudios Sociales</td>
+
+        </tr>
+        <tr>
+            <td>Adriana Gómez Elizondo</td>
+            <td>Estudios Sociales</td>
+
+        </tr>
+        <tr>
+            <td>Gabriela Pereira Fuentes</td>
+            <td>Estudios Sociales</td>
+
+        </tr>
+        <tr>
+            <td>Diego Moya Blanco</td>
+            <td>Ciencias</td>
+
+        </tr>
+        <tr>
+            <td>Evelyn Porras Murillo</td>
+            <td>Ciencias</td>
+
+        </tr>
+        <tr>
+            <td>José Miguel Flores Villegas</td>
+            <td>Matemáticas</td>
+
+        </tr>
+        <tr>
+            <td>Paulina Coto Mata</td>
+            <td>Matemáticas</td>
+
+        </tr>
+        <tr>
+            <td>
+                Yendry Soto Vega
+            </td>
+            <td>Matemáticas</td>
+
+        </tr>
+        <tr>
+            <td>Dinia Luna Tortóz</td>
+            <td>Idiomas (Ingles) </td>
+
+        </tr>
+        <tr>
+            <td>María José Castro Hernández</td>
+            <td>Idiomas (Frances)</td>
+
+        </tr>
+        <tr>
+            <td>Raiza Flores Urtecho</td>
+            <td>Artes Plásticas</td>
+
+        </tr>
+        <tr>
+            <td>Karla Solano Segura</td>
+            <td>Artes Plásticas</td>
+
+        </tr>
+        <tr>
+            <td>Johnny Ortega Artavia</td>
+            <td>Educación Física</td>
+
+        </tr>
+        <tr>
+            <td>Alina Rodriguez Domenech</td>
+            <td>Educación Física</td>
+
+        </tr>
+        <tr>
+            <td>Esteban Zúñiga Morales</td>
+            <td>Educación Física</td>
+
+        </tr>
+        <tr>
+            <td>Ricardo Quiros OViedo</td>
+            <td>Música</td>
+
+        </tr>
+        <tr>
+            <td>Marlon Mena Robles</td>
+            <td>Música</td>
+
+        </tr>
+        <tr>
+            <td>Donald Morales Martínez</td>
+            <td>Artes Industriales</td>
+
+        </tr>
+        <tr>
+            <td>Naira Román Garita</td>
+            <td>Vida Cotidiana</td>
+
+        </tr>
+        <tr>
+            <td>Eduardo Enrique Calvo Fernández</td>
+            <td>Religión</td>
+
+        </tr>
+
+        <tr>
+            <td>Justa Patricia Mora Melendez</td>
+            <td>Música</td>
+
+        </tr>
+        <tr>
+            <td>Mag.María Concepción Delgado Socatelli</td>
+            <td>Asistente de Dirección</td>
+
+        </tr>
+        <tr>
+            <td>Gabriela Núñez Rojas</td>
+            <td>Orientación</td>
+
+        </tr>
+
+        <tr>
+            <td>Yessenia Aguero Ferlini</td>
+            <td>Orientación</td>
+
+        </tr>
+
+        <tr>
+            <td>Jazmín Abarca Alvarado</td>
+            <td>Auxiliar Administrativo</td>
+
+        </tr>
+
+        <tr>
+            <td>Licda. Maria Adolía Torres Mejía</td>
+            <td>Directora</td>
+
+        </tr>
+
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Docente</th>
+            <th>Asignatura</th>
+
+        </tr>
+    </tfoot>
+</table>
+
+
+
+<br /><br /><br /><br /><br /><br />
+
+@section Scripts{
+
+    <script src="~/Scripts/DataTable/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/DataTable/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/DataTable/dataTables.material.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable({
+                columnDefs: [
+                    {
+                        targets: [0, 1],
+                        className: 'mdl-data-table__cell--non-numeric'
+                    }
+                ],
+
+                "aLengthMenu": [100, 50, 10],
+                "bPaginate": false,
+                "bLengthChange": false,
+                "bFilter": true,
+                "bInfo": false,
+                "responsive": true,
+                "bAutoWidth": false,
+                "language": {
+                    "zeroRecords": "Docente no encontrado",
+                    "search": "Buscar Docente:"
+                }
+
+            });
+        });
+
+    </script>
+    <script>
+        $('#example').hide(0).delay(200).fadeIn(500);
+
+    </script>
+}

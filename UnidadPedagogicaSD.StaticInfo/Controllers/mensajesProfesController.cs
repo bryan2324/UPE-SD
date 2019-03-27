@@ -95,6 +95,7 @@ namespace UnidadPedagogicaSD.StaticInfo.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "idMensaje,cuerpo,fecha,idUsuario")] mensajex mensajex)
         {
+            mensajex.visible = 0;
             DateTime utcTime = DateTime.UtcNow;
             TimeZoneInfo serverZone = TimeZoneInfo.FindSystemTimeZoneById("Central America Standard Time");
             DateTime currentDateTime = TimeZoneInfo.ConvertTimeFromUtc(utcTime, serverZone);

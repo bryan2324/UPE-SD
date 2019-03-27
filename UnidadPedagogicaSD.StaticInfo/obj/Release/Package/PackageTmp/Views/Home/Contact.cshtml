@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "Contacto";
+    @Styles.Render("~/Content/Style.css");
+}
+
+<h3>@ViewBag.Message</h3>
+<br />
+
+<br />
+<h3><strong>Información de Contacto<strong /></h3>
+<hr />
+<br />
+<div class="container" id="example">
+    <div id="left_side">
+
+        <address>
+            <h5><strong>Correo de la Institucion:</strong>   <a href="mailto:upe.sandiego@mep.go.cr">upe.sandiego@mep.go.cr</a><br /></h5>
+
+            <h5><strong>Telefono:</strong>   <a href="tel:22795011">2279-5011 </a><br /></h5>
+
+        </address>
+    </div>
+</div>
+
+<div class="container" id="example2">
+    <br />
+
+    <h4><strong>Extensiones<br></strong></h4>
+    <h5><strong>Directora:</strong> Licda. Maria Adolía Torres Mejía | EXT 102</h5>
+    <h5><strong>Asistente Dirección Colegio:</strong> Mag.María Concepción Delgado Socatelli | EXT 105</h5>
+    <h5><strong>Coordinador Académico:</strong> Lic. Ivan Barquero Solano </h5>
+    <h5><strong>Orientadora:</strong> Licda. Yessenia Agüero Ferlini</h5>
+    <h5><strong>Orientadora:</strong> Licda. Gabriela Núñez Rojas| EXT 104</h5>
+    <h5><strong>Auxiliar Administrativo:</strong> Jazmín Abarca Alvarado | EXT 106</h5>
+    <h5><strong>Oficina:</strong> Vilma Aguilar Aguilar | EXT 101</h5>
+    <h5><strong>Oficina:</strong> Diana Monge Bermudez | EXT 101</h5>
+
+
+</div>
+<br />
+<br />
+<hr />
+
+
+<br />
+
+
+
+<div class="root" id="MisionContainer">
+
+    <h4><strong>Dirección</strong></h4>
+    <div class="row">
+        <div class="col-md-6 offset-lg-0">
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.389343269682!2d-84.00316338571861!3d9.901494477440531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e1722a1f00d3%3A0x61ac19937bc8594!2sUnidad+Pedag%C3%B3gica+San+Diego!5e0!3m2!1ses!2scr!4v1551816623379"
+                    width="500" height="450" frameborder="0" style="border:0;max-width:500%;height:200%" allowfullscreen></iframe>
+        </div>
+        <br /> <br />
+        <div class="col-md-4">
+            <p id="r1" class="table-bordered">
+
+                <font face="Arial">
+                    150 metros este del Templo Católico<br />
+                    San Diego, La Unión, Cartago.
+                </font>
+            </p>
+
+
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+<br />
+
+
+
+
+<script>
+    $('#example').hide(0).delay(200).fadeIn(250);
+
+</script><script>
+    $('#example2').hide(0).delay(200).fadeIn(600);
+
+</script><script>
+    $('#MisionContainer').hide(0).delay(200).fadeIn(900);
+
+</script>

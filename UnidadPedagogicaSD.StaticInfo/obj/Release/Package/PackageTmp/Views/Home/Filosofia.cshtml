@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Filosofia";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Content/style.css");
+
+
+}
+<link href="~/Content/style.css" rel="stylesheet" />
+<br /><br /><br /><br />
+<div class="container">
+    <h3 style="text-align:center" class="text-primary">Filosofía</h3>
+    <div class="col-md-10 pull-right">
+        <div class="col-md-10 pull-left">
+
+            <p id="filos">
+                La Unidad Pedagógica San Diego se enmarca dentro del contexto de dirigir
+                ampliamente la comunidad estudiantil hacia el fomento y refuerzo de los mas altos
+                valores sociales, éticos, espirituales, culturales ambientales y morales
+                <br />                <br />
+                Para cumplir esta menta, es preciso generar en el educador un espíritu de responsabilidad y
+                conveniencia armoniosa, tomando en cuenta los códigos de conducta como honestidad,
+                integridad, oportunidad, liderazgo, rectitud en todo momento, para ser un agente
+                transmisor de ejemplo y valor.
+                <br />                <br />
+                Siendo el modelo constructiviste en el que se pretende aplicar su accionar.
+            <p />
+
+            </div>
+        </div>
+
+        <script>
+            $('#filos').hide(0).delay(100).fadeIn(600);
+
+        </script>
+    </div>
+<br />  <br />

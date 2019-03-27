@@ -138,6 +138,7 @@
     <Compile Include="Controllers\mensajesAdminController.cs" />
     <Compile Include="Controllers\mensajesController.cs" />
     <Compile Include="Controllers\mensajesProfesController.cs" />
+    <Compile Include="Controllers\mensajexesController.cs" />
     <Compile Include="Controllers\tokensController.cs" />
     <Compile Include="Controllers\usuarioxesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -225,7 +226,6 @@
     <Content Include="Views\mensajesAdmin\Delete.cshtml" />
     <Content Include="Views\mensajesAdmin\Index.cshtml" />
     <Content Include="Views\mensajesProfes\Create.cshtml" />
-    <Content Include="Views\mensajesProfes\Delete.cshtml" />
     <Content Include="Views\mensajesProfes\Index.cshtml" />
     <Content Include="Views\usuarioxes\Edit.cshtml" />
     <Content Include="Views\mensajesAdmin\InicioAdmin.cshtml" />
@@ -234,6 +234,7 @@
     <Content Include="Views\tokens\Index.cshtml" />
     <Content Include="Views\usuarioxes\CreatebyToken.cshtml" />
     <Content Include="Views\Home\TokenVerify.cshtml" />
+    <Content Include="Views\mensajesAdmin\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
