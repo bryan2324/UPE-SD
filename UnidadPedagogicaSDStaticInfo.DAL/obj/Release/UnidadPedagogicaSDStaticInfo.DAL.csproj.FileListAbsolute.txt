@@ -22,3 +22,15 @@ C:\Users\Bryan\Desktop\TCU FINAL\UnidadPedagogicaSD.StaticInfo\UnidadPedagogicaS
 C:\Users\Bryan\Desktop\TCU FINAL\UnidadPedagogicaSD.StaticInfo\UnidadPedagogicaSDStaticInfo.DAL\obj\Release\UnidadPedagogicaSDStaticInfo.DAL.csproj.CopyComplete
 C:\Users\Bryan\Desktop\TCU FINAL\UnidadPedagogicaSD.StaticInfo\UnidadPedagogicaSDStaticInfo.DAL\obj\Release\UnidadPedagogicaSDStaticInfo.DAL.dll
 C:\Users\Bryan\Desktop\TCU FINAL\UnidadPedagogicaSD.StaticInfo\UnidadPedagogicaSDStaticInfo.DAL\obj\Release\UnidadPedagogicaSDStaticInfo.DAL.pdb
+C:\Users\Bryan\Source\Repos\UPE-SD\UnidadPedagogicaSDStaticInfo.DAL\bin\Release\UnidadPedagogicaSDStaticInfo.DAL.dll.config
+C:\Users\Bryan\Source\Repos\UPE-SD\UnidadPedagogicaSDStaticInfo.DAL\bin\Release\UnidadPedagogicaSDStaticInfo.DAL.dll
+C:\Users\Bryan\Source\Repos\UPE-SD\UnidadPedagogicaSDStaticInfo.DAL\bin\Release\UnidadPedagogicaSDStaticInfo.DAL.pdb
+C:\Users\Bryan\Source\Repos\UPE-SD\UnidadPedagogicaSDStaticInfo.DAL\bin\Release\EntityFramework.dll
+C:\Users\Bryan\Source\Repos\UPE-SD\UnidadPedagogicaSDStaticInfo.DAL\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Bryan\Source\Repos\UPE-SD\UnidadPedagogicaSDStaticInfo.DAL\bin\Release\EntityFramework.xml
+C:\Users\Bryan\Source\Repos\UPE-SD\UnidadPedagogicaSDStaticInfo.DAL\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Bryan\Source\Repos\UPE-SD\UnidadPedagogicaSDStaticInfo.DAL\obj\Release\UnidadPedagogicaSDStaticInfo.DAL.csprojAssemblyReference.cache
+C:\Users\Bryan\Source\Repos\UPE-SD\UnidadPedagogicaSDStaticInfo.DAL\obj\Release\UnidadPedagogicaSDStaticInfo.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Bryan\Source\Repos\UPE-SD\UnidadPedagogicaSDStaticInfo.DAL\obj\Release\UnidadPedagogicaSDStaticInfo.DAL.csproj.CopyComplete
+C:\Users\Bryan\Source\Repos\UPE-SD\UnidadPedagogicaSDStaticInfo.DAL\obj\Release\UnidadPedagogicaSDStaticInfo.DAL.dll
+C:\Users\Bryan\Source\Repos\UPE-SD\UnidadPedagogicaSDStaticInfo.DAL\obj\Release\UnidadPedagogicaSDStaticInfo.DAL.pdb
