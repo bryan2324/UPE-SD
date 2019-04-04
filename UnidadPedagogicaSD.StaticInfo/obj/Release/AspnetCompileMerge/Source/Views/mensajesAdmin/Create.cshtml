@@ -1,0 +1,62 @@
+﻿@model UnidadPedagogicaSDStaticInfo.DAL.mensajex
+
+@{
+    ViewBag.Title = "Crear Comunicado";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<br /><br /><br /><br /><br />
+<h5>Crear Comunicado</h5>
+<hr />
+<br />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.Label("Comunicado Nuevo", new { @class = "control-label col-md-2" })
+
+            <div class="col-lg-10 ">
+                @Html.TextAreaFor(model => model.cuerpo, new { @class = "form-control bg-primary", required = "required", rows = "15", style = "width: 65%; max-width: 65%;" })
+
+                @Html.ValidationMessageFor(model => model.cuerpo, "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Crear Comunicado" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Volver", "Index")
+</div>
+<br /><br />
+
+@section Scripts
+{
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+
+    <script type="text/javascript">
+        $('#cuerpo').on('keypress', function (e) {
+
+
+            $("#cuerpo").attr('maxlength', '1100');
+        });
+    </script>
+
+
+
+}

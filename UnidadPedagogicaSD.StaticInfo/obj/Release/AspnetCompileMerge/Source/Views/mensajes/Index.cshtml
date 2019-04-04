@@ -1,0 +1,56 @@
+﻿@model IEnumerable<UnidadPedagogicaSDStaticInfo.DAL.mensajex>
+
+@{
+    ViewBag.Title = "Comunicados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br /><br />
+
+<h4 class="text-primary">Comunicados de la Institución</h4>
+<hr />
+<br />
+<table class="table" id="example" style="margin:0;padding:0;table-layout:fixed;width:100%">
+    <tr>
+        <th class="col-sm-2" style="background-color:lavender;overflow-wrap:break-word">
+            @Html.DisplayName("Docente")
+        </th>
+
+
+
+        <th class="col-sm-9" style="background-color:darkgray;overflow-wrap:break-word">
+            @Html.DisplayName("Comunicado")
+        </th>
+
+        <th style="overflow-wrap:break-word">
+            @Html.DisplayName("Fecha" )
+        </th>
+       
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.visible == 1)
+            {
+                <tr>
+
+                    <td style="overflow-wrap:break-word">
+                        @Html.DisplayFor(modelItem => item.usuariox.nombre)
+                    </td>
+                    <td style="overflow-wrap:break-word">
+                        @Html.DisplayFor(modelItem => item.cuerpo )
+                    </td>
+                    <td style="overflow-wrap:break-word">
+                        @Html.DisplayFor(modelItem => item.fecha)
+                    </td>
+
+                  
+                </tr>
+            }
+    }
+
+</table>
+
+<script>
+        $('#example').hide(0).delay(100).fadeIn(350);
+
+</script>

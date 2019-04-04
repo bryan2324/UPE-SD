@@ -1,0 +1,84 @@
+﻿@model IEnumerable<UnidadPedagogicaSDStaticInfo.DAL.usuariox>
+
+@{
+    ViewBag.Title = "Usuarios";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+
+
+    
+}
+<br /><br /><br /><br /><br />
+
+<h4>Usuario Registrados</h4>
+<hr />  
+<br/>
+<p>
+    @Html.ActionLink("Registrar Usuario", "Create")
+</p>
+<table class="table" style="margin:0;padding:0;table-layout:fixed;width:100%">
+    <tr>
+        <th style="overflow-wrap:break-word">
+            @Html.DisplayName("Nombre")
+        </th>
+
+        <th style="overflow-wrap:break-word">
+            @Html.DisplayName("Numero de Cedula")
+        </th>
+        <th style="overflow-wrap:break-word">
+            @Html.DisplayName("Contraseña")
+        </th>
+        <th style="overflow-wrap:break-word">
+            @Html.DisplayName("Rol en el sistema")
+        </th>
+        <th style="overflow-wrap:break-word">
+            @Html.DisplayName("Acciones")
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+  
+
+    <tr>
+        <td style="overflow-wrap:break-word">
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td style="overflow-wrap:break-word">
+            @Html.DisplayFor(modelItem => item.cedula)
+        </td>
+        <td style="overflow-wrap:break-word">
+            @Html.DisplayFor(modelItem => item.pass)
+        </td>
+        @{
+            if (item.idRol == 1)
+            {
+                <td style="overflow-wrap:break-word">
+                    Profesor
+                </td>
+            }
+            else if (item.idRol == 2)
+            {
+                <td style="overflow-wrap:break-word">
+                    Administrador
+                </td>
+            }
+            else
+            {
+                <td style="overflow-wrap:break-word">
+                    Usuario Deshabilitado
+                </td>
+            }
+
+        }
+
+
+        <td style="overflow-wrap:break-word">
+
+
+            @Html.ActionLink("Cambiar rol del Usuario", "Edit", new { id = item.idUsuario })
+        </td>
+    </tr>
+                
+            }
+
+</table>

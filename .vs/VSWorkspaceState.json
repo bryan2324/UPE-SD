@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\UnidadPedagogicaSD.StaticInfo",
+    "\\UnidadPedagogicaSD.StaticInfo\\Views",
+    "\\UnidadPedagogicaSD.StaticInfo\\Views\\Home"
   ],
   "PreviewInSolutionExplorer": false
 }

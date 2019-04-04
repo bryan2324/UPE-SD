@@ -71,3 +71,16 @@ body {
     font-family: Arial;
 }
 
+.form-group .form-control {
+
+    max-width:100%;
+    margin:1%;
+}
+
+.form-actions{
+margin:2%;
+}
+
+.table {
+margin-bottom:50px;
+}

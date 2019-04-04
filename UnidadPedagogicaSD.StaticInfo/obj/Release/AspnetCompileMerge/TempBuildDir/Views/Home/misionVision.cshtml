@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Mision y Vision";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Content/style.css");
+}
+
+<link href="~/Content/style.css" rel="stylesheet" />
+<div class="container">
+    <br />
+    <br />
+    <br />
+
+    <br />
+    <div class="root" id="MisionContainer">
+
+
+        <div class="row">
+            <div class="col-md-6 offset-lg-0">
+                <br />
+                <br />
+                <br />
+                <img id="misionImg" src="~/Images/Imagenes Reducidas/Logo.jpg" class="center-block" />
+            </div>
+            <div class="col-md-6">
+                <h5 class="text-primary">Misión</h5>
+              
+                    <p id="r1">
+                        <font face="Arial">
+                            La Unidad Pedagógica San Diego, como organización educativa,
+                            guía su accionar a la formación integral de ciudadanos conscientes
+                            de sus deberes y responsabilidades con el progreso del país. Este
+                            accionar se fundamente en las disposiciones emanadas por el Ministerio
+                            de Edudación Pública costarricense, responde a expectativas y necesidades
+                            de la niñez y adolecencia centrado en un modelo pedagógico constructivista,
+                            considerando tanto la rigurosidad académico como la formación de principios
+                            éticos y morales, propios de una sociedad respetuosa de los derechos humanos,
+                            de la sexualidad humana, del entorno natural y del sistema democrático, en una
+                            cultura de paz y de consenso.
+                        </font>
+                    </p>
+               
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <hr />
+    <br />
+
+    <div id="visionContainer" class="col-lg-6 pull-left">
+        <h5 class="text-primary">Visión</h5>
+       
+            <p id="r2">
+                La Unidad Pedagógica San Diego pretende ser una organización lider en la prestación de un servicio
+                educativo de calidad reconocido interna y externamente, caracterizado por una atención eficiente, eficaz y humana a sus clientes, líder en la
+                aplicación del modelo pedagógico constructivista, artífice en la construcción de apredizajes significativos en sus estudiantes que les permitan incorporarse en su
+                vida diaria de una forma exitosa, al mismo tiempo que contribuyen con el desarrollo comunal y nacional
+            </p>
+      
+    </div>
+
+</div>
+<br />
+<br />
+<script>
+    $('#MisionContainer').hide(0).delay(100).fadeIn(400);
+    $('#visionContainer').hide(0).delay(100).fadeIn(1000);
+</script>
