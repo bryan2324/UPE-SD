@@ -196,10 +196,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/01/2018 12:20:56</publishTime>
     </File>
     <File Include="bin/UnidadPedagogicaSD.StaticInfo.dll">
-      <publishTime>03/27/2019 11:18:39</publishTime>
+      <publishTime>03/27/2019 14:58:01</publishTime>
     </File>
     <File Include="bin/UnidadPedagogicaSD.StaticInfo.pdb">
-      <publishTime>03/27/2019 11:18:39</publishTime>
+      <publishTime>03/27/2019 14:58:01</publishTime>
     </File>
     <File Include="bin/UnidadPedagogicaSDStaticInfo.BS.dll">
       <publishTime>03/25/2019 13:39:04</publishTime>
@@ -433,16 +433,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/05/2019 10:14:05</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
-      <publishTime>03/07/2019 15:28:56</publishTime>
+      <publishTime>03/27/2019 14:35:26</publishTime>
     </File>
     <File Include="Views/Home/Contact.cshtml">
-      <publishTime>03/19/2019 13:54:32</publishTime>
+      <publishTime>03/27/2019 14:44:15</publishTime>
     </File>
     <File Include="Views/Home/docentesPrimaria.cshtml">
-      <publishTime>03/19/2019 13:49:24</publishTime>
+      <publishTime>03/27/2019 14:41:47</publishTime>
     </File>
     <File Include="Views/Home/docentesSecundaria.cshtml">
-      <publishTime>03/19/2019 13:49:16</publishTime>
+      <publishTime>03/27/2019 14:41:51</publishTime>
     </File>
     <File Include="Views/Home/Filosofia.cshtml">
       <publishTime>03/19/2019 13:51:10</publishTime>
@@ -454,7 +454,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/19/2019 14:43:21</publishTime>
     </File>
     <File Include="Views/Home/Login.cshtml">
-      <publishTime>03/26/2019 13:13:55</publishTime>
+      <publishTime>03/27/2019 14:45:48</publishTime>
     </File>
     <File Include="Views/Home/misionVision.cshtml">
       <publishTime>03/19/2019 13:52:51</publishTime>
@@ -466,7 +466,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/03/2019 15:30:33</publishTime>
     </File>
     <File Include="Views/Home/TokenVerify.cshtml">
-      <publishTime>03/26/2019 13:41:46</publishTime>
+      <publishTime>03/27/2019 14:41:36</publishTime>
     </File>
     <File Include="Views/Home/Ubicacion.cshtml">
       <publishTime>03/07/2019 14:55:59</publishTime>
@@ -559,7 +559,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/14/2019 14:51:57</publishTime>
     </File>
     <File Include="Views/usuarioxes/Index.cshtml">
-      <publishTime>03/27/2019 10:28:10</publishTime>
+      <publishTime>03/27/2019 14:53:50</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>03/05/2019 10:13:57</publishTime>
@@ -568,7 +568,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/05/2019 10:13:57</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/27/2019 10:33:20</publishTime>
+      <publishTime>03/27/2019 14:58:02</publishTime>
     </File>
   </ItemGroup>
 </Project>

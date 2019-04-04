@@ -7,25 +7,42 @@
 }
 <br />
 <br />
+<br />
+<br />
 <div class="login-page" id="example" style="max-width:100%;height:auto">
-    <div class="form">
-        <h4>Inicio de Sesión</h4> <br />
+    <div class="form" style="border:inset;background-color:white">
+        <h4 style="text-align:center">Inicio de Sesión</h4> <br />
 
 
-        @using (Html.BeginForm("IniciarSesion", "Home", FormMethod.Post, new { @class = "login-form" }))
+        @using (Html.BeginForm("IniciarSesion", "Home", FormMethod.Post, new { @class = "login-form", Style = "text-align: center;" }))
         {
-            @Html.TextBoxFor(model => model.cedula, new { placeholder = "Cedula", @class = "form-control control" })
-            @Html.PasswordFor(model => model.pass, new { placeholder = "Password", @class = "form-control" })
-            <button type="submit" class="btn btn">Iniciar Sesión</button>
-            <br />
-            <br />
+            <br /> <br />
+            <div class="col-lg-11 pull-right">
+                @Html.TextBoxFor(model => model.cedula, new { placeholder = "Cedula", @class = "form-control control" })
+            </div>
+            <br /> <br /> <br />
+            <div class="col-lg-11 pull-right">
+                @Html.PasswordFor(model => model.pass, new { placeholder = "Password", @class = "form-control" })
+            </div>
+            <br /> <br /> <br />
 
+            <div class="center-block">
+                <button type="submit" class="btn btn-lg btn-success">Iniciar Sesión</button>
+            </div>
+            <br />
+            <br /> <br />
 
+            <div>
+                @Html.ActionLink("Registrarse Ahora", "TokenVerify", "Home")
+            </div>
         }
 
-        @Html.ActionLink("Registrarse Ahora", "TokenVerify", "Home")
+        <br />
+        <br />
     </div>
-
+    <br />
+    <br /> <br />
+    <br />
 
 </div>
 @section Scripts
