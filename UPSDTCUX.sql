@@ -49,7 +49,7 @@ token int
 )
 
 
-insert into usuariox (cedula,idRol,nombre,pass) values('3362184069',2,'InitialAdmin','3362184069_sandiego2019');
+insert into usuariox (cedula,idRol,nombre,pass) values('336218406',2,'InitialAdmin','3362184069_sandiego2019');
 insert into tokens values(5525);
 
 
