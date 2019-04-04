@@ -5,17 +5,18 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 
 
-    
+
 }
 <br /><br /><br /><br /><br />
 
 <h4>Usuario Registrados</h4>
-<hr />  
-<br/>
+<hr />
+<br />
 <p>
     @Html.ActionLink("Registrar Usuario", "Create")
 </p>
-<table class="table" style="margin:0;padding:0;table-layout:fixed;width:100%">
+<table class="table" style="table-layout:fixed;width:100%">
+
     <tr>
         <th style="overflow-wrap:break-word">
             @Html.DisplayName("Nombre")
@@ -37,8 +38,8 @@
 
     @foreach (var item in Model)
     {
-  
 
+        if (item.nombre != "InitialAdmin") { 
     <tr>
         <td style="overflow-wrap:break-word">
             @Html.DisplayFor(modelItem => item.nombre)
@@ -78,7 +79,8 @@
             @Html.ActionLink("Cambiar rol del Usuario", "Edit", new { id = item.idUsuario })
         </td>
     </tr>
-                
+                }
             }
 
 </table>
+<br /><br />

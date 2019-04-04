@@ -13,7 +13,7 @@
 <p>
     @Html.ActionLink("Crear Comunicado", "Create")
 </p>
-<table class="table" style="margin:0;padding:0;table-layout:fixed;width:100%">
+<table class="table" style="table-layout:fixed;width:100%">
     <tr>
         <th class="col-sm-2" style="background-color:lavender;overflow-wrap:break-word">
             @Html.DisplayName("Docente")
@@ -28,10 +28,10 @@
         <th class="col-sm-1" style="overflow-wrap:break-word">
             @Html.DisplayName("Fecha")
         </th>
-        <th class="col-sm-1"  style="overflow-wrap:break-word">
+        <th class="col-sm-1" style="overflow-wrap:break-word">
             @Html.DisplayName("Visibilidad")
         </th>
-        <th class="col-sm-1"  style="overflow-wrap:break-word">
+        <th class="col-sm-1" style="overflow-wrap:break-word">
             @Html.DisplayName("Acciones")
         </th>
 
@@ -39,30 +39,30 @@
 
     @foreach (var item in Model)
     {
-    <tr>
+        <tr>
 
-        <td style="overflow-wrap:break-word">
-            @Html.DisplayFor(modelItem => item.usuariox.nombre)
-        </td>
-        <td style="overflow-wrap:break-word">
-            @Html.DisplayFor(modelItem => item.cuerpo)
-        </td>
-        <td  style="overflow-wrap:break-word">
-            @Html.DisplayFor(modelItem => item.fecha)
-        </td>
+            <td style="overflow-wrap:break-word">
+                @Html.DisplayFor(modelItem => item.usuariox.nombre)
+            </td>
+            <td style="overflow-wrap:break-word">
+                @Html.DisplayFor(modelItem => item.cuerpo)
+            </td>
+            <td style="overflow-wrap:break-word">
+                @Html.DisplayFor(modelItem => item.fecha)
+            </td>
 
-        @{
-            if (item.visible == 1)
-            {
-                <td>
-                     Visible
-                </td>
-            }
-            else
-            {
-                <td>
-                   NO Visible
-                </td>
+            @{
+                if (item.visible == 1)
+                {
+                    <td>
+                        Visible
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        NO Visible
+                    </td>
                 }
 
             }
@@ -71,12 +71,13 @@
 
 
 
-                <td>
-                    @Html.ActionLink("Cambiar Visibilidad", "Edit", new { id = item.idMensaje }) <br /> <br />
-                    @*@Html.ActionLink("Detalles", "Details", new { id = item.idMensaje }) |*@
-                    @Html.ActionLink("Eliminar", "Delete", new { id = item.idMensaje })
-                </td>
+            <td>
+                @Html.ActionLink("Cambiar Visibilidad", "Edit", new { id = item.idMensaje }) <br /> <br />
+                @*@Html.ActionLink("Detalles", "Details", new { id = item.idMensaje }) |*@
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.idMensaje })
+            </td>
         </tr>
     }
 
 </table>
+<br /><br />

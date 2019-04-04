@@ -17,13 +17,15 @@
         @using (Html.BeginForm("IniciarSesion", "Home", FormMethod.Post, new { @class = "login-form", Style = "text-align: center;" }))
         {
             <br /> <br />
-            <div class="col-lg-11 pull-right">
-                @Html.TextBoxFor(model => model.cedula, new { placeholder = "Cedula", @class = "form-control control" })
-            </div>
-            <br /> <br /> <br />
-            <div class="col-lg-11 pull-right">
-                @Html.PasswordFor(model => model.pass, new { placeholder = "Password", @class = "form-control" })
-            </div>
+
+                   <div class="col-md-9 col-md-offset-2 text-center">
+                       @Html.TextBoxFor(model => model.cedula, new { placeholder = "Cedula", @class = "form-control" })
+
+                       <br />
+                       @Html.PasswordFor(model => model.pass, new { placeholder = "Password", @class = "form-control" })
+                       <br />
+                   </div>
+            <br />
             <br /> <br /> <br />
 
             <div class="center-block">

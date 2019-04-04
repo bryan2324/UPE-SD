@@ -11,25 +11,35 @@
 
 <hr />
 <div class="login-page" style="max-width:100%;height:auto">
-    <div class="form" id="example">
+    <div class="form text-center table-bordered" id="example">
         <h4>Verificación de Token</h4>
 
 
-        @using (Html.BeginForm("TokenVerify", "Home", FormMethod.Post, new { @class = "login-form" }))
+        @using (Html.BeginForm("TokenVerify", "Home", FormMethod.Post, new { @class = "text-center border border-light p-5" }))
         {
-            @Html.PasswordFor(model => model.token, new { placeholder = "Secret Token", @class = "form-control" })
+            <div class="col-md-6 col-md-offset-3 text-center">
+
+                @Html.PasswordFor(model => model.token, new { placeholder = "Secret Token", @class = "form-control text-center" })
+                <br />
+            </div>
             <br />
-            <button type="submit" class="btn btn">Continuar Registro</button>
+
+            <button type="submit" class="btn btn-success">Continuar Registro</button>
+
+
             <br />
 
 
 
         }
-
+        <br />
     </div>
 
 
 </div>
+
+
+<br /> <br /> <br /> <br /> <br /> <br />
 
 <script>
     $('#example').hide(0).delay(100).fadeIn(300);
@@ -46,12 +56,12 @@
 
     <script type="text/javascript">
         $('#token').on('keypress', function (e) {
-            
+
 
             $("#token").attr('maxlength', '25');
         });
     </script>
 
-  
+
 
 }

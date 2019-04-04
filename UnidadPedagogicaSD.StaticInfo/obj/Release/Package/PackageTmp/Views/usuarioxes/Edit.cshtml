@@ -20,7 +20,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.nombre, htmlAttributes: new { @class = "control-label col-md-2", style = "display:none" })
-            <div class="col-md-10">
+            <div class="col-md-3">
                 @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control", style = "display:none" } })
                 @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger", style = "display:none" })
             </div>
@@ -28,7 +28,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.pass, htmlAttributes: new { @class = "control-label col-md-2", style = "display:none" })
-            <div class="col-md-10">
+            <div class="col-md-3">
                 @Html.EditorFor(model => model.pass, new { htmlAttributes = new { @class = "form-control", style = "display:none" } })
                 @Html.ValidationMessageFor(model => model.pass, "", new { @class = "text-danger", style = "display:none" })
             </div>
@@ -36,7 +36,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.cedula, htmlAttributes: new { @class = "control-label col-md-2", style = "display:none" })
-            <div class="col-md-10">
+            <div class="col-md-3">
                 @Html.EditorFor(model => model.cedula, new { htmlAttributes = new { @class = "form-control", style = "display:none" } })
                 @Html.ValidationMessageFor(model => model.cedula, "", new { @class = "text-danger", style = "display:none" })
             </div>
@@ -44,7 +44,7 @@
 
         <div class="form-group">
             @Html.Label("Rol de usuario", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-md-3">
                 <select id="idRol" name="idRol" class="form-control">
                     <option value="0">Deshabilitado</option>
                     <option value="1">Profesor</option>
